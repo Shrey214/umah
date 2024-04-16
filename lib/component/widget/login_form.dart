@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:umah/component/widget/third_party_login.dart';
 import 'package:umah/controller/login_controller.dart';
 import 'package:umah/helper/snackbar_helper.dart';
 import 'package:umah/helper/validation_helper.dart';

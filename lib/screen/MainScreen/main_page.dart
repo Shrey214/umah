@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../component/widget/bottom_bar.dart';
+
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
@@ -51,7 +53,8 @@ class _MainPageState extends State<MainPage> {
             ),
           ),
         ],
-      )
+      ),
+     
 
     );
   }

@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 
 import '../helper/reusableStrings.dart';
 
-
 class HomeComponent extends StatelessWidget {
    int currentPage;
    final PageController pageController;
@@ -53,8 +52,8 @@ class HomeComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Map<String, dynamic>> home_data = getHomeData();
-    Map<String, dynamic> page = home_data[currentPage];
+    List<Map<String, dynamic>> homeData = getHomeData();
+    Map<String, dynamic> page = homeData[currentPage];
     return   Container(
       constraints: const BoxConstraints.expand(),
       decoration: BoxDecoration(
