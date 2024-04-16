@@ -112,6 +112,7 @@ class LoginForm extends StatelessWidget {
                       onPressed: () {
                         if (loginKey.currentState!.validate()) {
                           loginKey.currentState?.save();
+                          Get.toNamed("/mainPage");
                           loginKey.currentState?.reset();
                         }
                       },
