@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../component/widget/bottom_bar.dart';
-
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
@@ -179,11 +177,6 @@ class _MainPageState extends State<MainPage> {
           ),
         ],
       ),
-<<<<<<< HEAD
-=======
-
-
->>>>>>> b8b33e4b5b7ea74463dd0a198dba39e18b3e13d8
     );
   }
 }
