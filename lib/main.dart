@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       initialRoute: "/mainSplash",
       defaultTransition: Transition.leftToRight,
       getPages: [
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/login", page: () => const LoginScreen()),
       ],
       title: 'Flutter Demo',
+
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
