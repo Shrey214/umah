@@ -30,7 +30,7 @@ class TopAppBar extends StatelessWidget implements PreferredSizeWidget {
                 color: Colors.black.withOpacity(0.2),
                 width: 1,
               ),
-              // Light thin black border
+
               borderRadius: BorderRadius.circular(10), // Border radius
             ),
             child: IconButton(
@@ -45,11 +45,11 @@ class TopAppBar extends StatelessWidget implements PreferredSizeWidget {
                       padding: const EdgeInsets.all(4),
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.red, // Change the color of the border as needed
+                        color: Colors.red,
                       ),
                       child: const Icon(Icons.notifications_none,
                           size: 10,
-                          color: Colors.white), // Your notification icon
+                          color: Colors.white),
                     ),
                   ),
                 ],
