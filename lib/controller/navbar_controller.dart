@@ -13,7 +13,7 @@ class NavBarController extends GetxController {
         Get.toNamed('/discover');
         break;
       case 2:
-
+        Get.toNamed('/list');
         break;
       case 3:
 

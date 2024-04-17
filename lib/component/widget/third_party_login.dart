@@ -28,7 +28,7 @@ class ThirdPartyLogin extends StatelessWidget {
                     color: Colors.black,
                   ),
                   const SizedBox(width: 10),
-                  const Text("Middle Text"),
+                  const Text("Or login With"),
                   const SizedBox(width: 10),
                   Container(
                     height: 1,
@@ -41,7 +41,7 @@ class ThirdPartyLogin extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Colors.grey[200],
+                  // color: Colors.grey[200],
                 ),
                 padding: const EdgeInsets.all(20),
                 child: Row(
@@ -53,9 +53,10 @@ class ThirdPartyLogin extends StatelessWidget {
                             "Sorry! This Feature is not available yet.");
                       },
                       child: Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          border: Border.all(color: Colors.grey),
+                          //border: Border.all(color: Colors.black26),
+                          color: Colors.black26
                         ),
                         padding: const EdgeInsets.all(10),
                         child: Image.asset(
@@ -72,9 +73,10 @@ class ThirdPartyLogin extends StatelessWidget {
                             "Sorry! This Feature is not available yet.");
                       },
                       child: Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          border: Border.all(color: Colors.grey),
+                          // border: Border.all(color: Colors.grey),
+                            color: Colors.black26
                         ),
                         padding: const EdgeInsets.all(10),
                         child: Image.asset(
@@ -91,9 +93,10 @@ class ThirdPartyLogin extends StatelessWidget {
                             "Sorry! This Feature is not available yet.");
                       },
                       child: Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          border: Border.all(color: Colors.grey),
+                          // border: Border.all(color: Colors.grey),
+                            color: Colors.black26
                         ),
                         padding: const EdgeInsets.all(10),
                         child: Image.asset(
