@@ -1,71 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:umah/component/widget/main_page_component/app_bar.dart';
 
-class MainPage extends StatefulWidget {
-  const MainPage({super.key});
+import '../../component/widget/main_page_component/bottom_bar.dart';
 
-  @override
-  State<MainPage> createState() => _MainPageState();
-}
+class MainPage extends StatelessWidget {
+  const MainPage({Key? key}) : super(key: key);
 
-class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false, // To remove the back arrow button
-        title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 1),
-          // Adjust the padding as needed
-          child: Align(
-            alignment: Alignment.centerLeft, // Align the title to the left
-            child: Image.asset(
-              'assets/image/mainPage_umah.png',
-              width: 100,
-              height: 22,
-              fit: BoxFit.contain, // Adjust the fit as needed
-            ),
-          ),
-        ),
-        actions: [
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              // Adjust the padding as needed
-              child: Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                      color: Colors.black.withOpacity(0.2), width: 1),
-                  // Light thin black border
-                  borderRadius: BorderRadius.circular(10), // Border radius
-                ),
-                child: IconButton(
-                  icon: Stack(
-                    children: [
-                      const Icon(Icons.shopping_cart, size: 30),
-                      // Your desired icon size
-                      Positioned(
-                        top: 0,
-                        right: 0,
-                        child: Container(
-                          padding: const EdgeInsets.all(4),
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors
-                                .red, // Change the color of the border as needed
-                          ),
-                          child: const Icon(Icons.notifications_none,
-                              size: 10,
-                              color: Colors.white), // Your notification icon
-                        ),
-                      ),
-                    ],
-                  ),
-                  onPressed: () {
-                    // Add onPressed callback functionality here
-                  },
-                ),
-              )),
-        ],
-      ),
+      appBar: const TopAppBar(),
+
+
+
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         // Align children to the start (left) of the column
@@ -83,14 +30,28 @@ class _MainPageState extends State<MainPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset('assets/image/WalletIcon.png',color: Colors.deepOrangeAccent,),
-                        const SizedBox(width: 10,),
+                        Image.asset(
+                          'assets/image/WalletIcon.png',
+                          color: Colors.deepOrangeAccent,
+                        ),
+                        const SizedBox(width: 10),
                         const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text("Wallet",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),
-                            Text("\$2,700", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),)
-
+                            Text(
+                              "Wallet",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "\$2,700",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
                           ],
                         ),
                       ],
@@ -105,14 +66,28 @@ class _MainPageState extends State<MainPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset('assets/image/ahievement-icon.png',color: Colors.deepOrangeAccent,),
-                        const SizedBox(width: 10,),
+                        Image.asset(
+                          'assets/image/ahievement-icon.png',
+                          color: Colors.deepOrangeAccent,
+                        ),
+                        const SizedBox(width: 10),
                         const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text("Points",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),
-                            Text("4,500", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),)
-
+                            Text(
+                              "Points",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "4,500",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
                           ],
                         ),
                       ],
@@ -127,14 +102,28 @@ class _MainPageState extends State<MainPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset('assets/image/discount-icon.png',color: Colors.deepOrangeAccent,),
-                        const SizedBox(width: 10,),
+                        Image.asset(
+                          'assets/image/discount-icon.png',
+                          color: Colors.deepOrangeAccent,
+                        ),
+                        const SizedBox(width: 10),
                         const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text("Vouchers",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,),),
-                            Text("2", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),)
-
+                            Text(
+                              "Vouchers",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "2",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
                           ],
                         ),
                       ],
@@ -148,7 +137,7 @@ class _MainPageState extends State<MainPage> {
           Container(
             color: Colors.red,
             height: 100,
-            child: Center(
+            child: const Center(
               child: Text('Row 2'),
             ),
           ),
@@ -159,7 +148,7 @@ class _MainPageState extends State<MainPage> {
                 child: Container(
                   color: Colors.yellow,
                   height: 100,
-                  child: Center(
+                  child: const Center(
                     child: Text('Row 3 - Item 1'),
                   ),
                 ),
@@ -168,7 +157,7 @@ class _MainPageState extends State<MainPage> {
                 child: Container(
                   color: Colors.orange,
                   height: 100,
-                  child: Center(
+                  child: const Center(
                     child: Text('Row 3 - Item 2'),
                   ),
                 ),
@@ -177,6 +166,12 @@ class _MainPageState extends State<MainPage> {
           ),
         ],
       ),
+
+
+
+
+
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

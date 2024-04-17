@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../controller/navbar_controller.dart';
+import '../../../controller/navbar_controller.dart';
 
 class BottomNavBar extends StatelessWidget {
   final NavBarController navBarController = Get.put(NavBarController());
@@ -10,8 +10,7 @@ class BottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: Obx(() => BottomNavigationBar(
+    return  Obx(() => BottomNavigationBar(
         currentIndex: navBarController.selectedIndex.value,
         onTap: (index) => navBarController.onItemTapped(index),
         unselectedItemColor: Colors.deepOrangeAccent,
@@ -36,8 +35,8 @@ class BottomNavBar extends StatelessWidget {
           ),
         ],
       )
-      ),
-    );
+      );
+
   }
 }
 
