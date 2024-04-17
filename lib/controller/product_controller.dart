@@ -1,11 +1,14 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:umah/helper/model_data/product_data.dart';
 import 'package:umah/model/product.dart';
+import 'package:umah/services/category_repo.dart';
 import 'package:umah/services/product_repo.dart';
 
 class ProductController extends GetxController {
   var products = <Product>[].obs;
 
+  Rx<Category?> category = Rx<Category?>(null);
   @override
   void onInit() {
     super.onInit();
@@ -39,5 +42,14 @@ class ProductController extends GetxController {
     }
   }
 
-  
+  void getCategoryByCategoryId(categoryId){
+    try {
+      Category? category2 = CategoryRepo().getCategoryById(categoryId);
+      category.value=category2;
+    } catch (e) {
+      print(e);
+    }
+  }
+
+
 }

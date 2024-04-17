@@ -37,7 +37,6 @@ class TopAppBar extends StatelessWidget implements PreferredSizeWidget {
               icon: Stack(
                 children: [
                   const Icon(Icons.shopping_cart, size: 30),
-                  // Your desired icon size
                   Positioned(
                     top: 0,
                     right: 0,
