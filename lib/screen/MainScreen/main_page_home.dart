@@ -20,7 +20,7 @@ class MainPage extends StatelessWidget {
               // First row
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 1, vertical: 20),
+                    const EdgeInsets.only(top: 20),
                 child: Row(
                   children: [
                     Expanded(
@@ -138,37 +138,31 @@ class MainPage extends StatelessWidget {
                 ),
               ),
               // Second row
-              Cards(),
-              // Container(
-              //   color: Colors.red,
-              //   height: 100,
-              //   child: const Center(
-              //     child: Text('Row 2'),
-              //   ),
-              // ),
+              const Cards(),
+
               // Third row
-              Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      color: Colors.yellow,
-                      height: 100,
-                      child: const Center(
-                        child: Text('Row 3 - Item 1'),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      color: Colors.orange,
-                      height: 100,
-                      child: const Center(
-                        child: Text('Row 3 - Item 2'),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              // Row(
+              //   children: [
+              //     Expanded(
+              //       child: Container(
+              //         color: Colors.yellow,
+              //         height: 100,
+              //         child: const Center(
+              //           child: Text('Row 3 - Item 1'),
+              //         ),
+              //       ),
+              //     ),
+              //     Expanded(
+              //       child: Container(
+              //         color: Colors.orange,
+              //         height: 100,
+              //         child: const Center(
+              //           child: Text('Row 3 - Item 2'),
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ),

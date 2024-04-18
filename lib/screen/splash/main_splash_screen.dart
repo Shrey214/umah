@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:umah/screen/login_screen.dart';
-
-import '../home_screen.dart';
+// import 'package:umah/screen/login_screen.dart';
+import '../OnboardingScreens/Onboarding_Page.dart';
 
 class MainSplashScreen extends StatelessWidget {
   const MainSplashScreen({super.key});
-
+   void fun1(BuildContext context)
+   {
+     Future.delayed(const Duration(seconds: 5), () {
+       Navigator.of(context).pushReplacement(
+         MaterialPageRoute(builder: (_) => const Onboarding()),
+       );
+     });
+   }
   @override
   Widget build(BuildContext context) {
-    Future.delayed(const Duration(seconds: 5), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const HomeScreen()),
-      );
-    });
+    fun1(context);
     return Scaffold(
       body: Center(
         child: Stack(
