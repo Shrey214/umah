@@ -14,7 +14,7 @@ class CarouselController extends GetxController {
 }
 
 class Cards extends StatelessWidget {
-  const Cards({Key? key}) : super(key: key);
+  Cards({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,14 +35,14 @@ class Cards extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 145),
+          padding: const EdgeInsets.symmetric(horizontal: 110),
           child: Obx(
             () => Row(
               children: List.generate(
                 3,
                 (index) => Icon(
                   Icons.horizontal_rule_rounded,
-                  size: 20,
+                  size: 40,
                   color: controller.carouselCurrentIndex.value == index
                       ? Colors.orange
                       : Colors.grey, // Change color based on index

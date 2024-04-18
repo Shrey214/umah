@@ -1,5 +1,5 @@
-class OnBoardingData{
-  static List dataList = [
+List<Map<String, dynamic>> getHomeData(){
+  return [
     {
       'title': "Tons of furniture collections",
       'subtitle' : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
