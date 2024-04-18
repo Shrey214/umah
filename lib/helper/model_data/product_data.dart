@@ -9,7 +9,7 @@ List<Product> getProductData() {
       description: "Description for Chair Product 1",
       color: 'grey',
       price: 300,
-      image: "assets/image/linnon.png",
+      image: "assets/product/linnon.png",
     ),
     Product(
       productId: 2,
@@ -18,7 +18,7 @@ List<Product> getProductData() {
       color: 'white',
       price: 500,
       description: "Description for Chair Product 2",
-      image: "assets/image/torald.png",
+      image: "assets/product/torald.png",
     ),
 
     Product(
@@ -28,7 +28,7 @@ List<Product> getProductData() {
       color: 'red',
       price: 100,
       description: "Description for Table Product 1",
-      image: "assets/image/meltorp.png",
+      image: "assets/product/meltorp.png",
     ),
 
     Product(
@@ -38,7 +38,7 @@ List<Product> getProductData() {
       color: 'red',
       price: 250,
       description: "Description for Lamp Product 1",
-      image: "assets/image/langkapten.jpg",
+      image: "assets/product/torald.png",
     ),
     Product(
       productId: 5,
@@ -47,7 +47,7 @@ List<Product> getProductData() {
       color: 'red',
       price: 250,
       description: "Description for Lamp Product 1",
-      image: "assets/image/lamp_product1_image.jpg",
+      image: "assets/product/torald.png",
     ),
     Product(
       productId: 4,
@@ -56,7 +56,7 @@ List<Product> getProductData() {
       color: 'red',
       price: 250,
       description: "Description for Lamp Product 1",
-      image: "assets/image/meltorp.jpg",
+      image: "assets/product/meltorp.png",
     ),
   ];
 }
