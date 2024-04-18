@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:umah/controller/product_controller.dart';
 import 'package:umah/helper/model_data/category_data.dart';
 import 'package:umah/helper/model_data/room-data.dart';
 
@@ -7,8 +9,8 @@ import '../../component/widget/main_page_component/bottom_bar.dart';
 import '../../helper/snackbar_helper.dart';
 
 class DiscoverScreen extends StatelessWidget {
-  const DiscoverScreen({Key? key}) : super(key: key);
-
+   DiscoverScreen({Key? key}) : super(key: key);
+  final ProductController productController = Get.put(ProductController());
   @override
   Widget build(BuildContext context) {
     var rooms = getRoomData();
@@ -127,9 +129,7 @@ class DiscoverScreen extends StatelessWidget {
                 itemBuilder: (_, index) {
                   return GestureDetector(
                     onTap: () {
-                      // Handle the tap event here
-                      // You can navigate to another screen or perform any other action
-                      print('Category $index clicked!');
+                       productController.getProductByCategoryId(categories[index].categoryId);
                     },
                     child: Container(
                       margin: const EdgeInsets.symmetric(vertical: 5.0),

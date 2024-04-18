@@ -22,13 +22,13 @@ class LoginScreen extends StatelessWidget {
       body: Column(
         children: [
           Flexible(
-          child: LoginHeader(
-            title: 'Welcome to\nUMAH!',
+            child: LoginHeader(
+              title: 'Welcome to\nUMAH!',
+            ),
           ),
-          ),
-           LoginForm(),
+          LoginForm(),
 
-             const Flexible(
+          const Flexible(
             child: ThirdPartyLogin(),
 
           ),
