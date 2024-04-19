@@ -23,12 +23,14 @@ class WishListController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    loadWishlistByUserId(loginController.loginUser.value?.userId);
-    getAllProductInWishList(loginController.loginUser.value!.userId);
-    isSaved.value = List<bool>.generate(
-      products.length,
-      (index) => false,
-    );
+    if (loginController.loginUser.value != null) {
+      loadWishlistByUserId(loginController.loginUser.value!.userId);
+      getAllProductInWishList(loginController.loginUser.value!.userId);
+      isSaved.value = List<bool>.generate(
+        products.length,
+        (index) => false,
+      );
+    }
   }
 
   /*
@@ -49,15 +51,14 @@ class WishListController extends GetxController {
     }
   }
 
-
-  void removeWishlistData(index){
-    try{
-         WishListRepo().deleteWishlist(index);
-    }
-    catch(e){
+  void removeWishlistData(index) {
+    try {
+      WishListRepo().deleteWishlist(index);
+    } catch (e) {
       print(e);
     }
   }
+
   /*
    * this methode use Fetch All Wishlist From Hive Database
    *
