@@ -122,8 +122,7 @@ class ListScreen extends StatelessWidget {
                                       right: 0,
                                       child: IconButton(
                                         icon: const Icon(Icons.bookmark),
-                                        // color: wishListController.isSaved[index] ? Colors.blue : Colors.white,
-
+                                        color: (wishListController.isSaved.isNotEmpty && wishListController.isSaved[index]) ? Colors.blue: Colors.black45,
                                         onPressed: () {
                                           wishListController.addWishList(WishList(
                                             productId: productController.products[index].productId,

@@ -9,8 +9,9 @@ import '../../component/widget/main_page_component/bottom_bar.dart';
 import '../../helper/snackbar_helper.dart';
 
 class DiscoverScreen extends StatelessWidget {
-   DiscoverScreen({Key? key}) : super(key: key);
+  DiscoverScreen({Key? key}) : super(key: key);
   final ProductController productController = Get.put(ProductController());
+
   @override
   Widget build(BuildContext context) {
     var rooms = getRoomData();
@@ -36,7 +37,7 @@ class DiscoverScreen extends StatelessWidget {
                   prefixIcon: const Icon(Icons.search),
                   suffixIcon: TextButton(
                     onPressed: () {
-                     Get.toNamed("/productscan");
+                      Get.toNamed("/productscan");
                     },
                     child: const Icon(Icons.document_scanner_outlined),
                   ),
@@ -63,11 +64,12 @@ class DiscoverScreen extends StatelessWidget {
                   itemCount: rooms.length,
                   itemBuilder: (_, index) {
                     return Padding(
-                      padding: const EdgeInsets.only(right: 2.0), // Add spacing between items
+                      padding: const EdgeInsets.only(right: 2.0),
+                      // Add spacing between items
                       child: GestureDetector(
                         onTap: () {
-                          SnackBarHelper().showSnackbar(
-                              context, "Sorry! This Feature is not available yet.");
+                          SnackBarHelper().showSnackbar(context,
+                              "Sorry! This Feature is not available yet.");
                         },
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,7 +87,6 @@ class DiscoverScreen extends StatelessWidget {
                   },
                 ),
               ),
-
               SizedBox(
                 height: 80, // Set a fixed height or adjust as needed
                 child: ListView.builder(
@@ -93,11 +94,12 @@ class DiscoverScreen extends StatelessWidget {
                   itemCount: roomLastData.length,
                   itemBuilder: (_, index) {
                     return Padding(
-                      padding: const EdgeInsets.only(right: 2.0), // Add spacing between items
+                      padding: const EdgeInsets.only(right: 2.0),
+                      // Add spacing between items
                       child: GestureDetector(
                         onTap: () {
-                          SnackBarHelper().showSnackbar(
-                              context, "Sorry! This Feature is not available yet.");
+                          SnackBarHelper().showSnackbar(context,
+                              "Sorry! This Feature is not available yet.");
                         },
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,9 +117,7 @@ class DiscoverScreen extends StatelessWidget {
                   },
                 ),
               ),
-
               const SizedBox(height: 15),
-
               const Text(
                 'Categories',
                 style: TextStyle(
@@ -126,7 +126,6 @@ class DiscoverScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-
               ListView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
@@ -134,12 +133,14 @@ class DiscoverScreen extends StatelessWidget {
                 itemBuilder: (_, index) {
                   return GestureDetector(
                     onTap: () {
-                       productController.getProductByCategoryId(categories[index].categoryId);
+                      productController
+                          .getProductByCategoryId(categories[index].categoryId);
                     },
                     child: Container(
                       margin: const EdgeInsets.symmetric(vertical: 5.0),
                       decoration: BoxDecoration(
-                        color: Colors.grey[200], // Set the background color here
+                        color: Colors.grey[200],
+                        // Set the background color here
                         borderRadius: BorderRadius.circular(10.0),
                         border: Border.all(
                           color: Colors.black26,
@@ -147,9 +148,11 @@ class DiscoverScreen extends StatelessWidget {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(10.0), // Added padding for better spacing
+                        padding: const EdgeInsets.all(10.0),
+                        // Added padding for better spacing
                         child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start, // Align leading content to the top
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          // Align leading content to the top
                           children: [
                             Expanded(
                               flex: 2, // Adjust flex values as needed
@@ -180,7 +183,8 @@ class DiscoverScreen extends StatelessWidget {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10.0),
                                 image: DecorationImage(
-                                  image: AssetImage(categories[index].image.toString()),
+                                  image: AssetImage(
+                                      categories[index].image.toString()),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -192,16 +196,10 @@ class DiscoverScreen extends StatelessWidget {
                   );
                 },
               ),
-
-
-
             ],
           ),
         ),
       ),
-
-
-
       bottomNavigationBar: BottomNavBar(),
     );
   }

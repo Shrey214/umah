@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:umah/screen/login_screen.dart';
 
 import '../OnboardingScreens/Onboarding_Page.dart';
 
+
+/*
+ *this is main Splash Screen
+ */
 class MainSplashScreen extends StatelessWidget {
   const MainSplashScreen({super.key});
 

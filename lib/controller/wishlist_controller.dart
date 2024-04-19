@@ -28,9 +28,10 @@ class WishListController extends GetxController {
       getAllProductInWishList(loginController.loginUser.value!.userId);
       isSaved.value = List<bool>.generate(
         products.length,
-        (index) => false,
+            (index) => false,
       );
     }
+
   }
 
   /*
@@ -51,29 +52,25 @@ class WishListController extends GetxController {
     }
   }
 
-  void removeWishlistData(index) {
+  /*
+   * this methode use delete Wishlist From Hive Database
+   *
+   * parameter :- index ,productId
+   *
+   * return:- void return type
+   */
+
+  void removeWishlistData(index,productId) {
     try {
-      WishListRepo().deleteWishlist(index);
+      WishListRepo().deleteWishlistByUserIdAndProductId(loginController.loginUser.value?.userId, productId);
+      products.removeAt(index);
+      getAllProductInWishList(loginController.loginUser.value!.userId);
     } catch (e) {
       print(e);
     }
   }
 
-  /*
-   * this methode use Fetch All Wishlist From Hive Database
-   *
-   * parameter :- No
-   *
-   * return:- void return type
-   */
-  loadAllWishList() {
-    try {
-      wishlists.value = WishListRepo().loadAllWishList();
-      print(wishlists.value.length);
-    } catch (e) {
-      print(e);
-    }
-  }
+
 
   /*
    * this methode use fro fetch wishlist by userid
@@ -85,9 +82,7 @@ class WishListController extends GetxController {
 
   loadWishlistByUserId(userId) {
     try {
-      loadAllWishList();
-      List<WishList> list =
-          wishlists.where((wishList) => wishList.userId == userId).toList();
+    List<WishList> list= WishListRepo().findWishlistByUserId(userId);
       wishlists.value = list;
     } catch (e) {
       print(e);
@@ -104,7 +99,6 @@ class WishListController extends GetxController {
   void getAllProductInWishList(userId) {
     try {
       var productIds = wishlists.map((wishlist) => wishlist.productId).toSet();
-
       var userProducts = getProductData()
           .where((product) => productIds.contains(product.productId))
           .toList();
