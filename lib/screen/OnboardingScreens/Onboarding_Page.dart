@@ -88,8 +88,8 @@ class _OnboardingState extends State<Onboarding> {
                               OnBoardingData.dataList[i]['subtitle'],
                               textAlign: TextAlign.center,
                               style: const TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 12,
+                                  color: Colors.white,
+                                  fontSize: 13,
                                   fontWeight: FontWeight.bold),
                             ),
                           ],
