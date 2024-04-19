@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:umah/controller/login_controller.dart';
 import 'package:umah/helper/snackbar_helper.dart';
 import 'package:umah/helper/validation_helper.dart';
+import 'package:umah/screen/MainScreen/main_page.dart';
 
 class LoginForm extends StatelessWidget {
   LoginForm({Key? key}) : super(key: key);
@@ -119,7 +120,7 @@ class LoginForm extends StatelessWidget {
                         );
                       } else {
                         // Login successful, navigate to main page
-                        Get.toNamed("/mainPage");
+                        Get.offAll(MainPage());
                       }
                       loginKey.currentState?.reset();
                     }
