@@ -1,4 +1,3 @@
-
 import 'package:get/get.dart';
 import 'package:umah/helper/model_data/product_data.dart';
 import 'package:umah/model/product.dart';
@@ -7,16 +6,29 @@ import 'package:umah/services/product_repo.dart';
 
 import '../model/category.dart';
 
+/*
+ *This Controller handle State of product in this code write crud operation methode
+ */
 class ProductController extends GetxController {
+  //product observable list
   var products = <Product>[].obs;
 
+  //category observable object
   Rx<Category?> category = Rx<Category?>(null);
+
   @override
   void onInit() {
     super.onInit();
     loadProduct();
   }
 
+  /*
+   * this methode use load all product or fetch all product
+   *
+   * parameter :- no parameter
+   *
+   * return:- void return type
+   */
   void loadProduct() {
     try {
       List<Product> lists = getProductData();
@@ -25,7 +37,6 @@ class ProductController extends GetxController {
       printInfo(info: e.toString());
     }
   }
-
 
   /*
    * get Products By Category Id
@@ -36,7 +47,7 @@ class ProductController extends GetxController {
    */
   void getProductByCategoryId(categoryId) {
     try {
-      List<Product> lists= ProductRepo().getByCategoryId(categoryId);
+      List<Product> lists = ProductRepo().getByCategoryId(categoryId);
       products.value = lists;
       getCategoryByCategoryId(categoryId);
       Get.toNamed("/list");
@@ -45,16 +56,20 @@ class ProductController extends GetxController {
     }
   }
 
-  void getCategoryByCategoryId(categoryId){
+  /*
+   * get Category By Category Id
+   *
+   * Param:- Category Id
+   *
+   * Return:-void
+   */
+
+  void getCategoryByCategoryId(categoryId) {
     try {
       Category? category2 = CategoryRepo().getCategoryById(categoryId);
-      category.value=category2;
+      category.value = category2;
     } catch (e) {
       print(e);
     }
   }
-
-
-
-
 }
