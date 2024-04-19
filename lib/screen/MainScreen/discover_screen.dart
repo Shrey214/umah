@@ -25,16 +25,21 @@ class DiscoverScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               TextField(
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.white38),
                     borderRadius: BorderRadius.all(
                       Radius.circular(10),
                     ),
                   ),
                   labelText: "Search",
-                  prefixIcon: Icon(Icons.search),
-                  suffixIcon: Icon(Icons.document_scanner_outlined),
+                  prefixIcon: const Icon(Icons.search),
+                  suffixIcon: TextButton(
+                    onPressed: () {
+                     Get.toNamed("/productscan");
+                    },
+                    child: const Icon(Icons.document_scanner_outlined),
+                  ),
                 ),
                 onChanged: (value) {
                   SnackBarHelper().showSnackbar(

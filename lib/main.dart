@@ -9,6 +9,7 @@ import 'package:umah/screen/MainScreen/list_screen.dart';
 import 'package:umah/screen/MainScreen/main_page.dart';
 import 'package:umah/screen/MainScreen/wishlist_screen.dart';
 import 'package:umah/screen/OnboardingScreens/Onboarding_Page.dart';
+import 'package:umah/screen/Product/product_scan.dart';
 import 'package:umah/screen/login_screen.dart';
 import 'package:umah/screen/splash/main_splash_screen.dart';
 import 'package:path_provider/path_provider.dart';
@@ -35,11 +36,15 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: "/mainSplash", page: () => const MainSplashScreen()),
         GetPage(name: "/login", page: () => const LoginScreen()),
-        GetPage(name: "/mainPage", page: () => const MainPage()),
+        GetPage(name: "/mainPage", page: () =>  MainPage()),
         GetPage(name: "/discover", page: () =>  DiscoverScreen()),
         GetPage(name: "/list", page: () =>   ListScreen()),
         GetPage(name: "/onboardingPage", page: () => const Onboarding()),
+
+        GetPage(name: "/productscan", page: () => const ProductScan()),
+
         GetPage(name: "/wishList", page: () =>  WishListScreen()),
+
 
       ],
       title: 'Flutter Demo',
