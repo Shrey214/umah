@@ -59,10 +59,10 @@ class WishListController extends GetxController {
   loadAllWishList() {
     try {
       wishlists.value = WishListRepo().loadAllWishList();
-    }
-    catch (e) {
       print(wishlists.value.length);
-    } 
+    } catch (e) {
+      print(e);
+    }
   }
 
   /*
