@@ -49,6 +49,15 @@ class WishListController extends GetxController {
     }
   }
 
+
+  void removeWishlistData(index){
+    try{
+         WishListRepo().deleteWishlist(index);
+    }
+    catch(e){
+      print(e);
+    }
+  }
   /*
    * this methode use Fetch All Wishlist From Hive Database
    *

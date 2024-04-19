@@ -27,5 +27,14 @@ class WishListRepo{
     }
   }
 
+  void deleteWishlist(index){
+    try{
+      box.deleteAt(index);
+    }
+    catch(e){
+      print(e);
+    }
+  }
+
 
 }
