@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:umah/component/widget/wishlist/empty_data_component.dart';
 import 'package:umah/controller/wishlist_controller.dart';
 
 import '../../component/widget/main_page_component/app_bar.dart';
 import '../../component/widget/main_page_component/bottom_bar.dart';
 import '../../controller/login_controller.dart';
 import '../../helper/snackbar_helper.dart';
-import '../../model/wishlist.dart';
+
 
 class WishListScreen extends StatelessWidget {
   WishListScreen({super.key});
@@ -181,21 +182,8 @@ class WishListScreen extends StatelessWidget {
                     ),
                   );
                 } else {
-                  return const Center(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(height: 250),
-                        Text(
-                          "Sorry Not Available Wishlist Product",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25,
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
+                   return emptyDataComponent("wishlist");
+
                 }
               }),
             ],

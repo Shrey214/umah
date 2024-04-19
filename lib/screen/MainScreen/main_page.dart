@@ -5,6 +5,7 @@ import '../../component/widget/main_page_component/bottom_bar.dart';
 import '../../component/widget/main_page_component/main_page_carousel.dart';
 import '../../controller/category_controller.dart';
 import '../../controller/product_controller.dart';
+import '../../model/category.dart';
 import '../../model/product.dart';
 
 class MainPage extends StatelessWidget {
@@ -228,7 +229,14 @@ class MainPage extends StatelessWidget {
                   ),
                   TextButton(
                       onPressed: () {
-                        Get.toNamed("/discover");
+                        productController.category.value = Category(
+                          categoryId: 0,
+                          categoryTitle: "ALL",
+                          description: "kkkfmfek",
+                          image: "assets/category/cabinet.png",
+                        );
+                        productController.loadProduct();
+                        Get.toNamed('/list');
                       },
                       child: const Text(
                         "View all >",
@@ -341,7 +349,7 @@ class MainPage extends StatelessWidget {
                                           icon: const Icon(Icons.add),
                                           color: Colors.white,
                                           onPressed: () {
-                                            // wishListController.addListener(() { })
+
                                           },
                                         ),
                                       ),

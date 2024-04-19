@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:umah/component/widget/wishlist/empty_data_component.dart';
 import 'package:umah/controller/wishlist_controller.dart';
 import 'package:umah/model/wishlist.dart';
 
@@ -208,21 +209,7 @@ class ListScreen extends StatelessWidget {
               )
 
             else
-              const Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(height: 250),
-                    Text(
-                      "Sorry Not Available Product",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              emptyDataComponent("product")
           ],
         );
       }),
