@@ -15,6 +15,10 @@ class NavBarController extends GetxController {
         Get.toNamed('/discover');
         break;
       case 2:
+        Get.toNamed('/wishList');
+
+        break;
+      case 3:
         productController.category.value = Category(
           categoryId: 0,
           categoryTitle: "ALL",
@@ -23,9 +27,6 @@ class NavBarController extends GetxController {
         );
         productController.loadProduct();
         Get.toNamed('/list');
-
-        break;
-      case 3:
         break;
     }
   }

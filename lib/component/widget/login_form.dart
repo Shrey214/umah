@@ -34,7 +34,8 @@ class LoginForm extends StatelessWidget {
                   prefixIcon: const Icon(Icons.email),
                   hintText: 'Email',
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10), // Add border radius
+                    borderRadius:
+                        BorderRadius.circular(10), // Add border radius
                   ),
                 ),
                 validator: (value) {
@@ -52,30 +53,33 @@ class LoginForm extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               Obx(() => TextFormField(
-                obscureText: !loginController.isPasswordVisible.value,
-                decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.lock),
-                  hintText: 'Password',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  suffixIcon: IconButton(
-                    icon: Icon(loginController.isPasswordVisible.value
-                        ? Icons.visibility
-                        : Icons.visibility_off),
-                    onPressed: () {
-                      loginController.togglePasswordVisibility();
-                    },
-                  ),
-                ),
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Please enter your password';
-                  }
+                    obscureText: !loginController.isPasswordVisible.value,
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.lock),
+                      hintText: 'Password',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      suffixIcon: IconButton(
+                        icon: Icon(loginController.isPasswordVisible.value
+                            ? Icons.visibility
+                            : Icons.visibility_off),
+                        onPressed: () {
+                          loginController.togglePasswordVisibility();
+                        },
+                      ),
+                    ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Please enter your password';
+                      }
 
-                  return null;
-                },
-              )),
+                      return null;
+                    },
+                    onSaved: (value) {
+                      password = value;
+                    },
+                  )),
               const SizedBox(height: 24),
               Row(
                 children: [
@@ -87,8 +91,8 @@ class LoginForm extends StatelessWidget {
                   const Spacer(),
                   TextButton(
                     onPressed: () {
-                      SnackBarHelper().showSnackbar(context,
-                          "Sorry! This Feature is not available yet.");
+                      SnackBarHelper().showSnackbar(
+                          context, "Sorry! This Feature is not available yet.");
                     },
                     child: const Text(
                       'Forgot Password',
@@ -104,10 +108,19 @@ class LoginForm extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     if (loginKey.currentState!.validate()) {
                       loginKey.currentState?.save();
-                      Get.toNamed("/mainPage");
+                      await loginController.handleLoginData(email, password);
+                      if (!loginController.isSuccess.value) {
+                        SnackBarHelper().showSnackbar(
+                             context,
+                          "Please enter valid email and password.",
+                        );
+                      } else {
+                        // Login successful, navigate to main page
+                        Get.toNamed("/mainPage");
+                      }
                       loginKey.currentState?.reset();
                     }
                   },
@@ -119,7 +132,7 @@ class LoginForm extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-              ),
+              )
             ],
           ),
         ),
