@@ -35,14 +35,14 @@ class Cards extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 110),
+          padding: const EdgeInsets.symmetric(horizontal: 138),
           child: Obx(
             () => Row(
               children: List.generate(
                 3,
                 (index) => Icon(
                   Icons.horizontal_rule_rounded,
-                  size: 40,
+                  size: 25,
                   color: controller.carouselCurrentIndex.value == index
                       ? Colors.orange
                       : Colors.grey, // Change color based on index
