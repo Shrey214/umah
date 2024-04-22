@@ -57,6 +57,303 @@ List<Product> getProductData() {
       price: 250,
       description: "Description for Lamp Product 1",
       image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
+    ), Product(
+      productId: 4,
+      categoryId: 4,
+      productTitle: "Meltorp",
+      color: 'red',
+      price: 250,
+      description: "Description for Lamp Product 1",
+      image: "assets/product/meltorp.png",
     ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   ];
 }

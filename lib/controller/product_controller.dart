@@ -72,4 +72,11 @@ class ProductController extends GetxController {
       print(e);
     }
   }
+  // Method to load more products
+  void fetchMoreProducts() {
+    List<Product> additionalProducts = getProductData();
+    products.addAll(additionalProducts);
+  }
+
+
 }

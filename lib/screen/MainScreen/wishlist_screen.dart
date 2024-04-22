@@ -21,7 +21,7 @@ class WishListScreen extends StatelessWidget {
       appBar: const TopAppBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -41,11 +41,16 @@ class WishListScreen extends StatelessWidget {
                       context, "Sorry! This Feature is not available yet.");
                 },
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
+             Text("${wishListController.products.length} products",style: const TextStyle(
+               fontSize: 15,fontWeight: FontWeight.bold
+             ),),
+              
+              const SizedBox(height: 10),
               Obx(() {
                 if (wishListController.products.isNotEmpty) {
                   return Padding(
-                    padding: const EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(16),
                     child: GridView.builder(
                       gridDelegate:
                       const SliverGridDelegateWithFixedCrossAxisCount(
