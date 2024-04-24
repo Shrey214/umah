@@ -75,6 +75,7 @@ flutter:
     - assets/product/
     - assets/category_icons/
     - assets/wishlist/
+    - assets/voucher/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
