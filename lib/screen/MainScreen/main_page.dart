@@ -4,17 +4,25 @@ import 'package:umah/component/widget/main_page_component/app_bar.dart';
 import '../../component/widget/main_page_component/bottom_bar.dart';
 import '../../component/widget/main_page_component/main_page_carousel.dart';
 import '../../controller/category_controller.dart';
+import '../../controller/login_controller.dart';
 import '../../controller/product_controller.dart';
+import '../../controller/wishlist_controller.dart';
 import '../../model/category.dart';
-import '../../model/product.dart';
+import '../../model/wishlist.dart';
 
 class MainPage extends StatelessWidget {
-   MainPage({Key? key}) : super(key: key);
+  MainPage({Key? key}) : super(key: key);
+
   void fun() {
     Get.toNamed("/discover");
   }
+
   final CategoryController categoryController = Get.put(CategoryController());
-  final ProductController  productController  = Get.put(ProductController());
+  final ProductController productController = Get.put(ProductController());
+  final WishListController wishListController = Get.put(WishListController());
+  final LoginController loginController = Get.put(LoginController());
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -173,41 +181,49 @@ class MainPage extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             Row(
               children: [
                 Expanded(
                   child: SizedBox(
                     // Wrap with SizedBox
                     height: 110, // Set height as needed
-                    child:ListView.builder(
+                    child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: categoryController.categories.length, // Replace with your item count
+                      itemCount: categoryController.categories.length,
+                      // Replace with your item count
                       itemBuilder: (BuildContext context, int index) {
                         // Replace this with your item widget builder
                         return Column(
                           children: [
                             Container(
-                              margin: const EdgeInsets.only(right: 10) ,
+                              margin: const EdgeInsets.only(right: 10),
                               width: 70,
                               height: 65,
                               decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: Colors.white , // Optional: you can set a background color for the circle
+                                color: Colors
+                                    .white, // Optional: you can set a background color for the circle
                               ),
                               child: Center(
                                 child: Image.asset(
-                                  categoryController.categories[index].imageIcon.toString(),
+                                  categoryController.categories[index].imageIcon
+                                      .toString(),
                                   width: 40, // Set width as needed
                                   height: 40, // Set height as needed
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 8), // Add some spacing between the icon and text
+                            const SizedBox(height: 8),
+                            // Add some spacing between the icon and text
                             Text(
-                              categoryController.categories[index].categoryTitle.toString(),
+                              categoryController.categories[index].categoryTitle
+                                  .toString(),
                               style: const TextStyle(
-                                fontSize: 16, // Set font weight to bold if desired
+                                fontSize:
+                                    16, // Set font weight to bold if desired
                               ),
                             ),
                           ],
@@ -243,7 +259,7 @@ class MainPage extends StatelessWidget {
                         style: TextStyle(
                             color: Colors.orange, // Set text color to orange
                             fontWeight:
-                            FontWeight.bold, // Set font weight to bold
+                                FontWeight.bold, // Set font weight to bold
                             decoration: TextDecoration
                                 .underline, // Add underline decoration
                             decorationColor: Colors.orange),
@@ -257,11 +273,12 @@ class MainPage extends StatelessWidget {
                   child: SizedBox(
                     // Wrap with SizedBox
                     height: 250, // Set height as needed
-                    child:Padding(
+                    child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        itemCount: productController.products.length, // Replace with your item count
+                        itemCount: productController.products.length,
+                        // Replace with your item count
                         itemBuilder: (BuildContext context, int index) {
                           // Replace this with your item widget builder
                           return Container(
@@ -269,7 +286,8 @@ class MainPage extends StatelessWidget {
                             width: 200,
                             height: 500,
                             decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.all(Radius.circular(12)),
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(12)),
                               border: Border.all(color: Colors.grey),
                             ),
                             child: Column(
@@ -284,7 +302,9 @@ class MainPage extends StatelessWidget {
                                           top: 0,
                                           left: 10,
                                           child: Image.asset(
-                                            productController.products[index].image.toString(),
+                                            productController
+                                                .products[index].image
+                                                .toString(),
                                             width: 155,
                                             height: 230,
                                             fit: BoxFit.contain,
@@ -296,7 +316,22 @@ class MainPage extends StatelessWidget {
                                           child: IconButton(
                                             icon: const Icon(Icons.bookmark),
                                             onPressed: () {
+                                              wishListController.addWishList(WishList(
+                                                productId: productController.products[index].productId,
+                                                userId: loginController.loginUser.value?.userId,
+                                              ),index);
 
+                                              ScaffoldMessenger.of(context).showSnackBar(
+                                                SnackBar(
+                                                  content: const Text('Successfully added to wishlist'),
+                                                  action: SnackBarAction(
+                                                    label: 'View Wishlist',
+                                                    onPressed: () {
+                                                      Get.toNamed("/wishList");
+                                                    },
+                                                  ),
+                                                ),
+                                              );
                                             },
                                           ),
                                         ),
@@ -306,51 +341,59 @@ class MainPage extends StatelessWidget {
                                 ),
                                 const SizedBox(height: 15),
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     SizedBox(
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.only(top: 5.0,right: 5.0,left: 5.0),
+                                            padding: const EdgeInsets.only(
+                                                top: 5.0,
+                                                right: 5.0,
+                                                left: 5.0),
                                             child: Text(
-                                              productController.products[index].productTitle.toString(),
+                                              productController
+                                                  .products[index].productTitle
+                                                  .toString(),
                                               style: const TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 18
-                                              ),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 18),
                                             ),
                                           ),
                                           Padding(
-                                            padding: const EdgeInsets.only(right: 5.0,left: 5.0,bottom: 5.0),
+                                            padding: const EdgeInsets.only(
+                                                right: 5.0,
+                                                left: 5.0,
+                                                bottom: 5.0),
                                             child: Text(
                                               "\$${productController.products[index].price.toString()}",
                                               style: const TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15.0
-                                              ),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 15.0),
                                             ),
                                           ),
                                         ],
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 0, 10, 0),
                                       child: Container(
                                         width: 40,
                                         height: 40,
                                         decoration: BoxDecoration(
                                           color: Colors.deepOrangeAccent,
-                                          borderRadius: BorderRadius.circular(8),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
                                         ),
                                         child: IconButton(
                                           icon: const Icon(Icons.add),
                                           color: Colors.white,
-                                          onPressed: () {
-
-                                          },
+                                          onPressed: () {},
                                         ),
                                       ),
                                     ),
@@ -373,12 +416,6 @@ class MainPage extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
 
 //
 // class ProductCard extends StatelessWidget {
@@ -433,6 +470,3 @@ class MainPage extends StatelessWidget {
 //   }
 // }
 //
-
-
-

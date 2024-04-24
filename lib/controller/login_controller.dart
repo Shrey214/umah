@@ -33,7 +33,7 @@ class LoginController extends GetxController {
    */
   Future<void> handleLoginData(email, password) async {
     try {
-      var user = UserRepo().findUserByEmailAndPassword(email, password);
+      User? user = UserRepo().findUserByEmailAndPassword(email, password);
       if (user != null) {
         loginUser.value = user;
         isSuccess.value = true;

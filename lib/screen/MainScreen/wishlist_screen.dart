@@ -41,11 +41,16 @@ class WishListScreen extends StatelessWidget {
                       context, "Sorry! This Feature is not available yet.");
                 },
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
+             Text("${wishListController.products.length} products",style: const TextStyle(
+               fontSize: 15,fontWeight: FontWeight.bold
+             ),),
+              
+              const SizedBox(height: 10),
               Obx(() {
                 if (wishListController.products.isNotEmpty) {
                   return Padding(
-                    padding: const EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(16),
                     child: GridView.builder(
                       gridDelegate:
                       const SliverGridDelegateWithFixedCrossAxisCount(
@@ -88,28 +93,14 @@ class WishListScreen extends StatelessWidget {
                                         child: IconButton(
                                           icon: const Icon(Icons.bookmark),
                                           onPressed: () {
-                                            // wishListController.addWishList(
-                                            //     WishList(
-                                            //       productId: wishListController
-                                            //           .products[index]
-                                            //           .productId,
-                                            //       userId: loginController
-                                            //           .loginUser.value?.userId,
-                                            //     ));
-
-                                            // ScaffoldMessenger.of(context)
-                                            //     .showSnackBar(
-                                            //   SnackBar(
-                                            //     content: const Text(
-                                            //         'Successfully added to wishlist'),
-                                            //     action: SnackBarAction(
-                                            //       label: 'View Wishlist',
-                                            //       onPressed: () {
-                                            //         Get.toNamed("/wishList");
-                                            //       },
-                                            //     ),
-                                            //   ),
-                                            // );
+                                            wishListController.removeWishlistData(index,wishListController.products[index].productId);
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              const SnackBar(
+                                                content: Text(
+                                                    'Successfully Remove Product From Wishlist'),
+                                              ),
+                                            );
                                           },
 
                                         ),
@@ -167,7 +158,7 @@ class WishListScreen extends StatelessWidget {
                                         icon: const Icon(Icons.add),
                                         color: Colors.white,
                                         onPressed: () {
-                                          // Add your onPressed logic here
+
                                         },
                                       ),
                                     ),

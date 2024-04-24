@@ -24,13 +24,13 @@ class NavBarController extends GetxController {
     selectedIndex.value = index;
     switch (selectedIndex.value) {
       case 0:
-        Get.toNamed('/mainPage');
+        Get.offAllNamed('/mainPage');
         break;
       case 1:
-        Get.toNamed('/discover');
+        Get.offAllNamed('/discover');
         break;
       case 2:
-        Get.toNamed('/wishList');
+        Get.offAllNamed('/wishList');
 
         break;
       case 3:
@@ -42,7 +42,7 @@ class NavBarController extends GetxController {
           image: "assets/category/cabinet.png",
         );
         productController.loadProduct();
-        Get.toNamed('/list');
+        Get.offAllNamed('/list');
         break;
     }
   }
