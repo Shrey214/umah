@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class TopAppBar extends StatelessWidget implements PreferredSizeWidget {
   const TopAppBar({Key? key}) : super(key: key);
@@ -54,7 +55,7 @@ class TopAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ],
               ),
               onPressed: () {
-                // Add onPressed callback functionality here
+              Get.offAllNamed("/cart");
               },
             ),
           ),

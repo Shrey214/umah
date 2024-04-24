@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:umah/component/widget/wishlist/empty_data_component.dart';
 import 'package:umah/controller/wishlist_controller.dart';
+import 'package:umah/model/cart.dart';
 import 'package:umah/model/wishlist.dart';
 
+import '../../controller/cart_controlller.dart';
 import '../../controller/login_controller.dart';
 import '../../controller/product_controller.dart';
 import '../../model/category.dart';
@@ -18,7 +20,7 @@ class ListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ProductController productController = Get.put(ProductController());
-
+    final CartController cartController = Get.put(CartController());
     // Function to load more products
     void loadMoreProducts() {
       productController.fetchMoreProducts();
@@ -239,7 +241,29 @@ class ListScreen extends StatelessWidget {
                                         icon: const Icon(Icons.add),
                                         color: Colors.white,
                                         onPressed: () {
-                                          // Add your onPressed logic here
+                                          cartController.addCart(
+                                            Cart(
+                                              productId: productController
+                                                  .products[index].productId,
+                                              userId: loginController
+                                                  .loginUser.value?.userId,
+                                            ),
+
+                                          );
+
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: const Text(
+                                                  'Successfully added to cart'),
+                                              action: SnackBarAction(
+                                                label: 'View Cart',
+                                                onPressed: () {
+                                                  Get.toNamed("/cart");
+                                                },
+                                              ),
+                                            ),
+                                          );
                                         },
                                       ),
                                     ),
