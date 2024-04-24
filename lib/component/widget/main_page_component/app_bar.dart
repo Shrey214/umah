@@ -56,6 +56,9 @@ class TopAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               onPressed: () {
                 Get.toNamed('/vouchersList');
+
+              Get.offAllNamed("/cart");
+
               },
             ),
           ),

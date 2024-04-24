@@ -5,4 +5,5 @@ class ImageStrings {
   static const String wishlistCharacter = 'assets/wishlist/Book_Idea.png';
   static const String productCharacter = 'assets/wishlist/Placingboxes.png';
   static const String umahLogo = 'assets/image/umah-logo.png';
+  static const String emptyCart = 'assets/wishlist/empty-cart.png';
 }
