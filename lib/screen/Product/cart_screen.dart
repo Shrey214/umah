@@ -18,7 +18,8 @@ class CartScreen extends StatelessWidget {
           child: Align(
             alignment: Alignment.centerLeft,
             child: Image.asset(
-              'assets/image/mainPage_umah.png', // Update image asset path if necessary
+              'assets/image/mainPage_umah.png',
+              // Update image asset path if necessary
               width: 100,
               height: 22,
               fit: BoxFit.contain,
@@ -44,7 +45,8 @@ class CartScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: SingleChildScrollView( // Wrap the entire content with SingleChildScrollView
+      body: SingleChildScrollView(
+        // Wrap the entire content with SingleChildScrollView
         child: Obx(() {
           return Column(
             children: [
@@ -64,7 +66,7 @@ class CartScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Icon(
+                    const Icon(
                       Icons.info,
                       size: 24.0,
                       color: Colors.cyan,
@@ -73,90 +75,111 @@ class CartScreen extends StatelessWidget {
                 ),
               ),
               if (cartController.products.isNotEmpty)
-                ListView.builder(
-                  shrinkWrap: true, // Ensure the ListView takes only the necessary space
-                  itemCount: cartController.products.length,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(16),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey),
-                          borderRadius: BorderRadius.circular(15.0),
-                        ),
-                        child: ListTile(
-                          leading: GestureDetector(
-                            onTap: () {
-                              // Handle image click
-                            },
-                            child: Image.asset(
-                              "${cartController.products[index].image}",
+                SizedBox(
+                  height: 430,
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    // Ensure the ListView takes only the necessary space
+                    itemCount: cartController.products.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+
+                        padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                        child: Container(
+                          height: 100,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey),
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          child: ListTile(
+                            leading: GestureDetector(
+                              onTap: () {
+                                // Handle image click
+                              },
+                              child: Image.asset(
+                                "${cartController.products[index].image}",
+                              ),
+                            ),
+                            title: Text(
+                                "${cartController.products[index].productTitle}",style: const TextStyle(
+                              fontSize: 15,fontWeight: FontWeight.bold
+                            ),),
+                            subtitle: Text(
+                                "Variant :- ${cartController.products[index].color}",style: const TextStyle(
+
+                            ),),
+                            trailing: SizedBox(
+                              width: 120,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                        width: 40,
+                                        height: 40,
+                                        decoration: BoxDecoration(
+                                          color: Colors.deepOrangeAccent,
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
+                                        child: IconButton(
+                                          icon: const Icon(Icons.add),
+                                          color: Colors.white,
+                                          onPressed: () {
+                                            cartController
+                                                .increaseProductQuantity();
+                                          },
+                                        ),
+                                      ),
+                                      Obx(
+                                        () => Text(
+                                          "${cartController.incrementProduct.value < 0 ? 0 : cartController.incrementProduct.value}",
+                                          style: const TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                      Container(
+                                        width: 40,
+                                        height: 40,
+                                        decoration: BoxDecoration(
+                                          color: Colors.deepOrangeAccent,
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
+                                        child: IconButton(
+                                          icon: const Icon(Icons.remove),
+                                          color: Colors.white,
+                                          onPressed: () {
+                                            cartController
+                                                .decreaseProductQuantity();
+                                          },
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
                             ),
                           ),
-                          title: Text("${cartController.products[index].productTitle}"),
-                          subtitle: Text("Variant :- ${cartController.products[index].color}"),
-                          trailing: SizedBox(
-                            width: 120,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Container(
-                                      width: 40,
-                                      height: 40,
-                                      decoration: BoxDecoration(
-                                        color: Colors.deepOrangeAccent,
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      child: IconButton(
-                                        icon: const Icon(Icons.add),
-                                        color: Colors.white,
-                                        onPressed: () {
-                                          cartController.increaseProductQuantity();
-                                        },
-                                      ),
-                                    ),
-                                    Obx(
-                                          () => Text(
-                                        "${cartController.incrementProduct.value < 0 ? 0 : cartController.incrementProduct.value}",
-                                        style: const TextStyle(fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 40,
-                                      height: 40,
-                                      decoration: BoxDecoration(
-                                        color: Colors.deepOrangeAccent,
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      child: IconButton(
-                                        icon: const Icon(Icons.remove),
-                                        color: Colors.white,
-                                        onPressed: () {
-                                          cartController.decreaseProductQuantity();
-                                        },
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 )
               else
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        ImageStrings.emptyCart, // Update image asset path if necessary
+                        ImageStrings
+                            .emptyCart, // Update image asset path if necessary
                         // height: 300,
                       ),
                       const SizedBox(
@@ -183,8 +206,9 @@ class CartScreen extends StatelessWidget {
                       TextButton(
                         onPressed: () {},
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.resolveWith<Color?>(
-                                (states) {
+                          backgroundColor:
+                              MaterialStateProperty.resolveWith<Color?>(
+                            (states) {
                               if (states.contains(MaterialState.disabled)) {
                                 return Colors.orange.withOpacity(0.5);
                               }
@@ -193,15 +217,15 @@ class CartScreen extends StatelessWidget {
                           ),
                         ),
                         child: const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 12),
-                          child: Text("Shop Now    >", style: TextStyle(color: Colors.white)),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 25, vertical: 12),
+                          child: Text("Shop Now    >",
+                              style: TextStyle(color: Colors.white)),
                         ),
                       ),
                     ],
                   ),
                 ),
-
-
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -224,11 +248,13 @@ class CartScreen extends StatelessWidget {
                                 children: [
                                   Padding(
                                     padding: EdgeInsets.all(10.0),
-                                    child: Icon(Icons.discount_rounded, color: Colors.white),
+                                    child: Icon(Icons.discount_rounded,
+                                        color: Colors.white),
                                   ),
                                   Expanded(
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           'Use Voucher Code',
@@ -335,7 +361,6 @@ class CartScreen extends StatelessWidget {
                   ),
                 ],
               ),
-
             ],
           );
         }),
